@@ -1,0 +1,60 @@
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ── KEY STEP: inject the secret into main.js ──────────
+      - name: Inject SHEET_URL into main.js
+        env:
+          SHEET_URL: ${{ secrets.SHEET_URL }}
+        run: |
+          # Replace the placeholder token with the real URL.
+          # Using | as sed delimiter so slashes in the URL don't break it.
+          sed -i "s|__SHEET_URL__|${SHEET_URL}|g" js/main.js
+          echo "✓ SHEET_URL injected"
+
+      # Optional: verify the placeholder was replaced (shows line, hides value)
+      - name: Verify injection
+        run: |
+          if grep -q "__SHEET_URL__" js/main.js; then
+            echo "❌ Placeholder still present — check secret name"
+            exit 1
+          else
+            echo "✓ Placeholder successfully replaced"
+          fi
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
