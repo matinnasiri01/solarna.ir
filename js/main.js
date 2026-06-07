@@ -143,14 +143,7 @@ function initContactForm() {
   const msgEl = form.querySelector('.form__msg');
   const btn   = form.querySelector('[type=submit]');
 
-  /*
-   * ⚙️  SETUP:
-   * 1. Open Google Sheets → Extensions → Apps Script
-   * 2. Paste the doPost() script (see README or docs)
-   * 3. Deploy → New deployment → Web app → Execute as: Me → Who has access: Anyone
-   * 4. Copy the /exec URL and replace SHEET_URL below
-   */
-  const SHEET_URL = 'https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec';
+  const SHEET_URL = 'https://script.google.com/macros/s//exec';
 
   form.addEventListener('submit', async e => {
     e.preventDefault();

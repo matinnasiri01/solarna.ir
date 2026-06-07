@@ -66,7 +66,7 @@ function injectFooter() {
         </div>
       </div>
       <div class="footer__bottom">
-        <span>© ۱۴۰۳ سولارنا. تمامی حقوق محفوظ است.</span>
+        <span>© ۱۴۰۵ سولارنا. تمامی حقوق محفوظ است.</span>
         <span>مشهد ایران</span>
       </div>
     </div>`;
