@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>محاسبه‌گر صرفه‌جویی خورشیدی — سولارنا</title>
+  <meta name="description" content="قبض برق ماهانه خود را وارد کنید. اندازه سیستم، هزینه نصب و صرفه‌جویی ماهانه را آنی محاسبه کنید.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://solarna.ir/pricing.html">
+  <meta property="og:title"       content="محاسبه‌گر صرفه‌جویی — سولارنا">
+  <meta property="og:description" content="محاسبه آنی صرفه‌جویی انرژی خورشیدی.">
+  <meta property="og:url"         content="https://solarna.ir/pricing.html">
+  <meta property="og:type"        content="website">
+  <meta name="twitter:card"       content="summary_large_image">
+  <meta name="theme-color"        content="#0a0a0a">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- ══ PAGE HERO ═════════════════════════════════ -->
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="مسیر صفحه">
+        <a href="index.html">خانه</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <span aria-current="page">محاسبه‌گر</span>
+      </nav>
+      <div class="s-label" data-reveal>ابزار محاسبه</div>
+      <h1 class="h-title" data-reveal data-delay="1">چقدر صرفه‌جویی<br>می‌کنید؟</h1>
+      <p class="body-lg" style="max-width:460px;margin-top:1rem" data-reveal data-delay="2">
+        قبض ماهانه و استان خود را وارد کنید. اندازه سیستم، هزینه و صرفه‌جویی ماهانه را فوری ببینید.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══ CALCULATOR ════════════════════════════════ -->
+  <section aria-labelledby="calc-h">
+    <div class="container">
+      <div class="calc-wrap">
+
+        <!-- INPUT -->
+        <div class="calc-panel" data-reveal>
+          <h2 id="calc-h" class="h-sub" style="margin-bottom:2rem">اطلاعات مصرف خود را وارد کنید</h2>
+          <form id="calcForm" novalidate aria-label="فرم محاسبه صرفه‌جویی">
+
+            <div class="calc-field">
+              <label for="billInput">میانگین قبض برق ماهانه (تومان)</label>
+              <input type="number" id="billInput" name="bill"
+                     placeholder="مثال: ۲،۰۰۰،۰۰۰"
+                     min="100000" max="50000000" step="100000"
+                     inputmode="numeric" aria-describedby="billHint">
+              <p id="billHint" class="calc-note">میانگین قبض ۳ ماه آخر را وارد کنید</p>
+              <input type="range" id="billSlider" min="100000" max="20000000"
+                     step="100000" value="2000000" aria-label="اسلایدر مبلغ قبض">
+              <div style="display:flex;justify-content:space-between" class="body-sm" aria-hidden="true">
+                <span>۱۰۰ هزار</span><span>۲۰ میلیون</span>
+              </div>
+            </div>
+
+            <div class="calc-field">
+              <label for="region">استان / منطقه</label>
+              <select id="region" name="region" aria-label="انتخاب منطقه">
+                <option value="tehran">تهران</option>
+                <option value="isfahan">اصفهان</option>
+                <option value="shiraz">شیراز / فارس</option>
+                <option value="mashhad">مشهد / خراسان</option>
+                <option value="tabriz">تبریز / آذربایجان</option>
+                <option value="ahvaz">اهواز / خوزستان</option>
+                <option value="other">سایر مناطق</option>
+              </select>
+              <p class="calc-note" style="margin-top:.4rem">میزان تابش خورشید در محاسبات تاثیر دارد</p>
+            </div>
+
+            <a href="contact.html" class="btn btn-ink btn-lg"
+               style="width:100%;justify-content:center;margin-top:.4rem;display:flex">
+              دریافت قیمت دقیق از تیم ما
+              <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M10 7H2m4-4L2 7l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </form>
+        </div>
+
+        <!-- RESULT + INFO -->
+        <div data-reveal data-delay="1">
+
+          <div id="calcResult" class="calc-result" aria-live="polite" aria-label="نتایج محاسبه">
+            <div class="s-label" style="margin-bottom:1.1rem">نتایج محاسبه شما</div>
+            <div class="calc-result-grid">
+              <div class="calc-result-box">
+                <div class="calc-result-box__val" id="rSize">—</div>
+                <div class="calc-result-box__key">اندازه سیستم</div>
+              </div>
+              <div class="calc-result-box">
+                <div class="calc-result-box__val" id="rSaveM">—</div>
+                <div class="calc-result-box__key">صرفه‌جویی ماهانه</div>
+              </div>
+              <div class="calc-result-box">
+                <div class="calc-result-box__val" id="rSaveY">—</div>
+                <div class="calc-result-box__key">صرفه‌جویی سالانه</div>
+              </div>
+              <div class="calc-result-box">
+                <div class="calc-result-box__val" id="rPayback">—</div>
+                <div class="calc-result-box__key">بازگشت سرمایه</div>
+              </div>
+            </div>
+            <div style="border:1.5px solid var(--line);border-radius:var(--r);padding:1.1rem 1.2rem;display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+              <div>
+                <div class="body-sm">هزینه تقریبی سیستم</div>
+                <div class="h-sub" id="rCost">—</div>
+              </div>
+              <a href="contact.html" class="btn btn-ghost btn-sm">تأیید قیمت</a>
+            </div>
+            <p class="calc-note">* قیمت‌ها تقریبی و بر اساس نرخ‌های جاری بازار ایران است. قیمت دقیق پس از بازدید رایگان ارائه می‌شود.</p>
+          </div>
+
+          <!-- Static info -->
+          <div style="margin-top:2.5rem">
+            <div class="s-label">چرا همین الان؟</div>
+            <div class="process-list">
+              <div class="process-item">
+                <div class="process-item__num">↑</div>
+                <div>
+                  <div class="process-item__title">قبض برق سالانه ۳۰–۵۰٪ گران می‌شود</div>
+                  <div class="process-item__desc">هزینه‌هایتان را همین الان قفل کنید.</div>
+                </div>
+              </div>
+              <div class="process-item">
+                <div class="process-item__num">☀</div>
+                <div>
+                  <div class="process-item__title">ایران ۳۰۰+ روز آفتابی در سال دارد</div>
+                  <div class="process-item__desc">یکی از بالاترین تابش خورشیدی در جهان.</div>
+                </div>
+              </div>
+              <div class="process-item">
+                <div class="process-item__num">۲۵</div>
+                <div>
+                  <div class="process-item__title">عمر مفید پنل ۲۵+ سال</div>
+                  <div class="process-item__desc">پس از ۴–۶ سال بازگشت سرمایه، ۲۰ سال سود خالص.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FAQ ════════════════════════════════════════ -->
+  <section aria-labelledby="faq-h">
+    <div class="container">
+      <div style="margin-bottom:2.5rem" data-reveal>
+        <div class="s-label">سوالات متداول</div>
+        <h2 class="h-title" id="faq-h">پاسخ سوالات شما</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden" data-reveal data-delay="1">
+        <div style="background:var(--bg);padding:2rem">
+          <h3 class="h-sub" style="margin-bottom:.7rem">در روزهای ابری هم کار می‌کند؟</h3>
+          <p class="body-sm">بله. پنل‌های مدرن حتی در نور پراکنده هم برق تولید می‌کنند. با ۳۰۰+ روز آفتابی ایران نگرانی نداشته باشید.</p>
+        </div>
+        <div style="background:var(--bg);padding:2rem">
+          <h3 class="h-sub" style="margin-bottom:.7rem">پرداخت اقساطی دارید؟</h3>
+          <p class="body-sm">بله. با موسسات مالی همکار، تا ۳۶ ماه اقساط بدون بهره برای مشتریان واجد شرایط ارائه می‌دهیم.</p>
+        </div>
+        <div style="background:var(--bg);padding:2rem">
+          <h3 class="h-sub" style="margin-bottom:.7rem">مجوز خاصی نیاز دارم؟</h3>
+          <p class="body-sm">سیستم‌های زیر ۱۰ کیلووات خانگی معمولاً نیازی به مجوز ندارند. ما تمام مراحل اداری را انجام می‌دهیم.</p>
+        </div>
+        <div style="background:var(--bg);padding:2rem">
+          <h3 class="h-sub" style="margin-bottom:.7rem">برق مازاد چه می‌شود؟</h3>
+          <p class="body-sm">در سیستم‌های On-Grid، برق مازاد به شبکه ملی تزریق و از کنتورتان کسر می‌شود. شما برق می‌فروشید!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CTA ════════════════════════════════════════ -->
+  <div class="cta-strip" data-reveal>
+    <div class="container">
+      <h2 class="h-title">اعداد را دیدید؟ حالا اقدام کنید!</h2>
+      <p class="body-lg">یک بازدید رایگان از محل رزرو کنید و قیمت دقیق دریافت کنید.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="contact.html" class="btn btn-lg" style="background:var(--bg);color:var(--ink)">رزرو بازدید رایگان</a>
+        <a href="index.html" class="btn btn-ghost btn-lg">بازگشت به خانه</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+<script src="js/components.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
