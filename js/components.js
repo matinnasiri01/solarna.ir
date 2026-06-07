@@ -60,14 +60,14 @@ function injectFooter() {
           <a href="contact.html">تماس با ما</a>
         </nav>
         <div class="footer__contact">
-          <a href="tel:+9821XXXXXXXX">۰۲۱-XXXXXXXX</a>
+          <a href="tel:+989333588420">09333588420</a>
           <a href="mailto:info@solarna.ir">info@solarna.ir</a>
-          <a href="https://wa.me/9821XXXXXXXX" target="_blank" rel="noopener">واتساپ</a>
+          <a href="https://wa.me/989333588420" target="_blank" rel="noopener">واتساپ</a>
         </div>
       </div>
       <div class="footer__bottom">
         <span>© ۱۴۰۳ سولارنا. تمامی حقوق محفوظ است.</span>
-        <span>تهران، ایران</span>
+        <span>مشهد ایران</span>
       </div>
     </div>`;
   document.body.append(f);
@@ -76,7 +76,7 @@ function injectFooter() {
 /* ── WHATSAPP ───────────────────────────── */
 function injectWhatsApp() {
   const wa = document.createElement('a');
-  wa.href = "https://wa.me/9821XXXXXXXX?text=سلام،%20مشاوره%20رایگان%20می‌خواهم";
+  wa.href = "https://wa.me/98333588420?text=سلام،%20مشاوره%20رایگان%20می‌خواهم";
   wa.className = 'wa-float';
   wa.setAttribute('aria-label', 'چت در واتساپ');
   wa.setAttribute('rel', 'noopener noreferrer');
