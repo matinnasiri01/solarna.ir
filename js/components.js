@@ -67,7 +67,7 @@ function injectFooter() {
       </div>
       <div class="footer__bottom">
         <span>© ۱۴۰۵ سولارنا. تمامی حقوق محفوظ است.</span>
-        <span>مشهد ایران</span>
+        <span>مشهد چراغچی 64</span>
       </div>
     </div>`;
   document.body.append(f);
