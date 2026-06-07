@@ -143,7 +143,7 @@ function initContactForm() {
   const msgEl = form.querySelector('.form__msg');
   const btn   = form.querySelector('[type=submit]');
 
-  const SHEET_URL = 'https://script.google.com/macros/s//exec';
+  const SHEET_URL = '__SHEET_URL__';
 
   form.addEventListener('submit', async e => {
     e.preventDefault();
